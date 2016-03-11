@@ -26,7 +26,7 @@ class Nylas {
     }
 
     protected function createHeaders() {
-        $token = 'Basic '.base64_encode($this->apiToken.':');
+        $token = 'Bearer '.$this->apiToken;
         $headers = array('headers' => ['Authorization' => $token,
                                        'X-Nylas-API-Wrapper' => 'php']);
         return $headers;
